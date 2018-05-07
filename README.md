@@ -127,7 +127,7 @@ Configure the Uncomplicated Firewall (UFW) to only allow incoming connections fo
 5. Clone the Catalog App to the virtual machine `git clone https://github.com/skphi13/catalog.git`
 6. Rename the project's name `sudo mv ./catalog ./FlaskApp`
 7. Move to the inner FlaskApp directory using `cd FlaskApp`
-8. Rename `catalog.py` to `__init__.py` using `sudo mv website.py __init__.py`
+8. Rename `catalog.py` to `__init__.py` using `sudo mv catalog.py __init__.py`
 9. Edit `database_setup_catalog.py` and change `engine = create_engine('sqlite:///toyshop.db')` to `engine = create_engine('postgresql://catalog:password@localhost/catalog')`
 10. Install pip `sudo apt-get install python-pip`
 11. Use pip to install dependencies `sudo pip install -r requirements.txt`
