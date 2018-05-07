@@ -93,7 +93,7 @@ Configure the Uncomplicated Firewall (UFW) to only allow incoming connections fo
 
 ## Install and configure PostgreSQL
 1. Install PostgreSQL `sudo apt-get install postgresql`
-2. Check if no remote connections are allowed `sudo vim /etc/postgresql/9.3/main/pg_hba.conf`
+2. Check if no remote connections are allowed `sudo vim /etc/postgresql/9.5/main/pg_hba.conf`
 3. Login as user "postgres" `sudo su - postgres`
 4. Get into postgreSQL shell `psql`
 5. Create a new database named catalog  and create a new user named catalog in postgreSQL shell
@@ -124,11 +124,11 @@ Configure the Uncomplicated Firewall (UFW) to only allow incoming connections fo
 2. Use `cd /var/www` to move to the /var/www directory 
 3. Create the application directory `sudo mkdir FlaskApp`
 4. Move inside this directory using `cd FlaskApp`
-5. Clone the Catalog App to the virtual machine `git clone https://github.com/kongling893/Item_Catalog_UDACITY.git`
-6. Rename the project's name `sudo mv ./Item_Catalog_UDACITY ./FlaskApp`
+5. Clone the Catalog App to the virtual machine `git clone https://github.com/skphi13/catalog.git`
+6. Rename the project's name `sudo mv ./catalog ./FlaskApp`
 7. Move to the inner FlaskApp directory using `cd FlaskApp`
-8. Rename `website.py` to `__init__.py` using `sudo mv website.py __init__.py`
-9. Edit `database_setup.py`, `website.py` and `functions_helper.py` and change `engine = create_engine('sqlite:///toyshop.db')` to `engine = create_engine('postgresql://catalog:password@localhost/catalog')`
+8. Rename `catalog.py` to `__init__.py` using `sudo mv website.py __init__.py`
+9. Edit `database_setup_catalog.py` and change `engine = create_engine('sqlite:///toyshop.db')` to `engine = create_engine('postgresql://catalog:password@localhost/catalog')`
 10. Install pip `sudo apt-get install python-pip`
 11. Use pip to install dependencies `sudo pip install -r requirements.txt`
 12. Install psycopg2 `sudo apt-get -qqy install postgresql python-psycopg2`
