@@ -2,7 +2,7 @@
 
 In this project, a Linux virtual machine needs to be configurated to support the Item Catalog website.
 
-You can visit http://18.218.121.98 for the website deployed.
+You can visit http://18.221.209.63 for the website deployed.
 
 ## Tasks
 1. Launch your Virtual Machine with your Udacity account
@@ -28,7 +28,7 @@ You can visit http://18.218.121.98 for the website deployed.
 3. Open your terminal and type in
 	```chmod 600 ~/.ssh/udacity_key.rsa```
 4. In your terminal, type in
-	```ssh -i ~/.ssh/udacity_key.rsa root@18.218.121.98```
+	```ssh -i ~/.ssh/udacity_key.rsa root@18.221.209.63```
 5. Development Environment Information
 
 	Public IP Address
@@ -62,7 +62,7 @@ You can visit http://18.218.121.98 for the website deployed.
 3. reload SSH using `service ssh restart`
 4. now you can use ssh to login with the new user you created
 
-	`ssh -i [privateKeyFilename] grader@52.24.125.52`
+	`ssh -i [privateKeyFilename] grader@18.221.209.63`
 
 ## Update all currently installed packages
 
@@ -132,7 +132,7 @@ Configure the Uncomplicated Firewall (UFW) to only allow incoming connections fo
 10. Install pip `sudo apt-get install python-pip`
 11. Use pip to install dependencies `sudo pip install -r requirements.txt`
 12. Install psycopg2 `sudo apt-get -qqy install postgresql python-psycopg2`
-13. Create database schema `sudo python database_setup.py`
+13. Create database schema `sudo python database_setup_catalog.py`
 
 ## Configure and Enable a New Virtual Host
 1. Create FlaskApp.conf to edit: `sudo nano /etc/apache2/sites-available/FlaskApp.conf`
@@ -140,7 +140,7 @@ Configure the Uncomplicated Firewall (UFW) to only allow incoming connections fo
 	
 	```
 	<VirtualHost *:80>
-		ServerName 18.218.121.98
+		ServerName 18.221.209.63
 		ServerAdmin pphang804@gmail.com
 		WSGIScriptAlias / /var/www/FlaskApp/flaskapp.wsgi
 		<Directory /var/www/FlaskApp/FlaskApp/>
